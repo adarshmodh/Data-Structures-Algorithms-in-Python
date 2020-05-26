@@ -4,11 +4,13 @@ class Node(object):
         self.edges = []
         self.visited = False
 
+ 
 class Edge(object):
     def __init__(self, value, node_from, node_to):
         self.value = value
         self.node_from = node_from
         self.node_to = node_to
+
 
 # You only need to change code with docs strings that have TODO.
 # Specifically: Graph.dfs_helper and Graph.bfs
@@ -142,6 +144,18 @@ class Graph(object):
         """
         ret_list = [start_node.value]
         # Your code here
+        
+        start_node.visited = True
+        
+        edges_out = []
+        for e in start_node.edges:
+            if e.node_to.value != start_node.value:
+                edges_out.append(e)
+        
+        for edge in edges_out:
+            if edge.node_to.visited == False:
+                ret_list.extend(self.dfs_helper(edge.node_to))
+        
         return ret_list
 
     def dfs(self, start_node_num):
@@ -169,6 +183,20 @@ class Graph(object):
         self._clear_visited()
         ret_list = [node.value]
         # Your code here
+        queue = [node]
+        node.visited = True
+        def enqueue(n, q=queue):
+            n.visited = True
+            q.append(n)
+        def unvisited_outgoing_edge(n, e):
+            return ((e.node_from.value == n.value) and
+                    (not e.node_to.visited))
+        while queue:
+            node = queue.pop(0)
+            ret_list.append(node.value)
+            for e in node.edges:
+                if unvisited_outgoing_edge(node, e):
+                    enqueue(e.node_to)
         return ret_list
 
     def bfs_names(self, start_node_num):
