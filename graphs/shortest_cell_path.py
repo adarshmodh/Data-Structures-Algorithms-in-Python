@@ -41,4 +41,3 @@ def shortestCellPath(grid, sr, sc, tr, tc):
                 queue.append((nr, nc, depth + 1))
                 seen.add((nr, nc))
     return -1
-
