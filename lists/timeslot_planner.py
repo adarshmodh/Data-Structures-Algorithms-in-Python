@@ -1,4 +1,6 @@
 """
+Implement a function meetingPlanner that given the availability, slotsA and slotsB, of two people and a meeting duration dur, returns the earliest time slot that works for both of them and is of duration dur. If there is no common time slot that satisfies the duration requirement, return an empty array.
+
 inputs = slotsA = [[10, 50], [60, 120], [140, 210]]
          slotsB = [[0, 15], [60, 70]]
          dur = 8
