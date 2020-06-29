@@ -1,4 +1,6 @@
 """
+BFS question
+
 In a given grid of 0s and 1s, we have some starting row and column sr, sc and a target row and column tr, tc. Return the length of the shortest path from sr, sc to tr, tc that walks along 1 values only.
 
 Each location in the path, including the start and the end, must be a 1. Each subsequent location in the path must be 4-directionally adjacent to the previous location.
@@ -25,7 +27,6 @@ output: -1
 1011
 
 """
-from collections import deque
 
 def shortestCellPath(grid, sr, sc, tr, tc):
     queue = []
@@ -41,3 +42,14 @@ def shortestCellPath(grid, sr, sc, tr, tc):
                 queue.append((nr, nc, depth + 1))
                 seen.add((nr, nc))
     return -1
+
+
+# grid = [[1, 1, 1, 1], [0, 0, 0, 1], [1, 0, 1, 1]]
+grid = [[1, 1, 1, 1], [0, 0, 0, 1], [1, 1, 1, 1]]
+
+sr = 0
+sc = 0 
+tr = 2 
+tc = 0
+
+print(shortestCellPath(grid, sr,sc,tr,tc))
