@@ -26,9 +26,7 @@ def partition(arr,low,high):
 # high  --> Ending index 
   
 # Function to do Quick sort 
-def quicksort(arr): 
-    low = 0
-    high = len(arr)-1
+def quicksort(arr, low, high): 
 
     if low < high: 
   
@@ -42,4 +40,4 @@ def quicksort(arr):
         quicksort(arr, pi+1, high) 
 
 test = [21, 4, 1, 3, 9, 20, 25, 6, 21, 14]
-print quicksort(test)
+print quicksort(test, 0, len(test))
