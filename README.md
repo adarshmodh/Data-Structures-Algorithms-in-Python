@@ -18,11 +18,19 @@ Coding Interview Guidelines-
 Interview Question Goals:
 
 Validate Job Description
+
 Learn more about company
+
 Understand tech landscape and roadmap (current vs. future state of technical environment)
+
 Determine the operations of the company: how they do things
+
 Capture key priorities/expectations - in like 3-6 months and in a year
+
 Identify success criteria - top skills required
+
 Determine interest - 
+
 Identify manager concerns about candidacy and plan how to overcome - concerns about my background
+
 How will a day look like for me in this role?
