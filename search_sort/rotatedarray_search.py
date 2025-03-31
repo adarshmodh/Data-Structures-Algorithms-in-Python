@@ -15,6 +15,33 @@ Space = O(1)
 
 """
 
+########### first solution - one pass 
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if nums[mid] == target:
+                return mid  # Found target
+
+            # Check which half is sorted
+            if nums[low] <= nums[mid]:  # Left half is sorted
+                if nums[low] <= target < nums[mid]:  # Target in left half?
+                    high = mid - 1
+                else:
+                    low = mid + 1
+            else:  # Right half is sorted
+                if nums[mid] < target <= nums[high]:  # Target in right half?
+                    low = mid + 1
+                else:
+                    high = mid - 1
+
+        return -1  # Target not found
+
+
+########### another solution - two pass 
 def shifted_arr_search(shiftArr, num):
     n = len(shiftArr)
     pivot = findPivotPoint(shiftArr)
