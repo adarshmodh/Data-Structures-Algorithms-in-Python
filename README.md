@@ -13,7 +13,7 @@ UPDATE - Now this repository is a continuous accumulation of solutions of the co
 7) Coding (explain steps while coding to show you are actually thinking and this is not a memorized solution)
 8) Debugging (going through it again and Checking whether your code actually works)
 
-## Coding Style guidelines - 
+## Coding Style guidelines for C++/Python 
 * Class names start with upper case, capitalize the first letter of each subsequent word.
 * Function and variable names start with lower case, capitalize the first letter of each subsequent word.
 * If it is a class/struct data member, add “_” at the end of the variable name. So that we can easily see it is not a local one.
