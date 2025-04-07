@@ -20,11 +20,9 @@ UPDATE - Now this repository is a continuous accumulation of solutions of the co
 * In general, we don’t put type info into class name or variable name or class name.
 * Indent is 2 space. Avoid using tabs for indent since it looks disorganized in different editors. All reasonable editor/IDE has a way to replace tab with space.
 * Do not add &quot;using namespace XXX&quot; in any header.
-* Avoid including &lt;QtCore&gt; &lt;QtGui&gt; kind of header in library level header. Since they will drag in very
-* long list of includes and slow down the compilation for all dependents.
+* Avoid including &lt;QtCore&gt; &lt;QtGui&gt; kind of header in library level header. Since they will drag in very long list of includes and slow down the compilation for all dependents.
 * Avoid too many unnecessary change of lines. If-else block, for block, please don’t change lines 2 or 3 times. It just causes us to scroll up and down more.
-* By convention class member variables are kept always private. And modified by setXXXX functions. Accessed by XXXX() const functions
-* return codes from main() functions are interpreted as 0 for success 1 for error.
+* By convention class member variables are kept always private. And modified by setXXXX functions. Accessed by XXXX() const functions return codes from main() functions are interpreted as 0 for success 1 for error.
 
 ## Interview Question Goals:
 
