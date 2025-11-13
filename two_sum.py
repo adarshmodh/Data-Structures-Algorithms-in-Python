@@ -17,20 +17,18 @@ def twoSum(nums, target):
     :type target: int
     :rtype: List[int]
     """
-#         for i, num1 in enumerate(nums):
-#             search = target - num1
-#             for j,num2 in enumerate(nums[i+1:]):
-#                 if num1+num2 == target:
-#                     return [i,j+i+1]
+    # two pass solution ( time and space complexity - O(n))
+    indices = {} 
 
-    if len(nums) <= 1:
-        return False
-    buff_dict = {}
-    for i in range(len(nums)):
-        if nums[i] in buff_dict:
-            return [buff_dict[nums[i]], i]
-        else:
-            buff_dict[target - nums[i]] = i
+    for i in range(len(nums)): # store all the numbers in nums in a dict with their indices
+        indices[nums[i]] = i
+
+    for j in range(len(nums)): # iterate through nums to see if there is a diff (target - nums[j]) that exists (while making sure i!=j)
+        diff = target - nums[j]
+        if diff in indices and indices[diff] != j:
+            return [j, indices[diff]]
+    
+    return []
 
 nums = [2, 7, 11, 15]
 target = 9
